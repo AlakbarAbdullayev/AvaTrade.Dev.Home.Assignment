@@ -17,7 +17,7 @@
                 await DoWorkAsync(stoppingToken);
 
                 // Wait for 1 hour before the next execution
-                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
 

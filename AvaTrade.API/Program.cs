@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using AvaTrade.Infrastructure.Security.JWT;
 using AvaTrade.Infrastructure.Encryption;
 using AvaTrade.API.BackgroundServices;
+using AvaTrade.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +74,8 @@ builder.Services.AddSwaggerGen(opt =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

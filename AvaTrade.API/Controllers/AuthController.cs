@@ -7,7 +7,7 @@ namespace AvaTrade.API.Controllers
 {
     public class AuthController : BaseController
     {
-        [HttpPost("Login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Login(LoginCommand command)
         {
             LoginResponse result = await Mediator.Send(command);
